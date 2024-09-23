@@ -17,78 +17,108 @@ class processo {
     char estado;
     int creditos;
     int surto;
+    int temposurto;
     int tempoes;
+    int counteres;
     int tempocpu;
     int ordem;
-    processo(string n, char e, int c, int s, int ts, int tcpu, int o, int p);
+    int prioridade;
+    processo(string n, char e, int c, int s, int ts, int tcpu, int o);
 };
 
-processo::processo(string pid, char e, int c, int s, int ts, int tcpu, int o, int p){
-    pid = pid;
+processo::processo(string n, char e, int c, int s, int ts, int tcpu, int o){
+    pid = n;
     estado = e;
     creditos = c;
     surto = s;
+    temposurto = s;
     tempoes = ts;
+    counteres = ts;
     tempocpu = tcpu;
     ordem = o;
+    prioridade = c;
 }
 
 int main () {
-    unordered_map<int, priority_queue<processo>> processos; //mapa que armazena processos
+    list<processo> processos; //mapa que armazena processos
+    processo A("A", 'w', 3, 2, 5, 6, 1);
+    processo B("B", 'w', 3, 3, 10, 6, 2);
+    processo C("C", 'w', 3, 0, 0, 14, 3);
+    processo D("D", 'w', 3, 0, 0, 10, 4);
     
-    /*
-    implementar algoritmo que aloca os processos dentro do mapa
-    */
-    
-    unordered_map<int, priority_queue<processo>>::iterator it; //nao lembro como a gente acessa os objetos de um mapa, algum de vcs vai ter que arrumar
+    processos.push_back(A);
+    processos.push_back(B);
+    processos.push_back(C);
+    processos.push_back(D);
+
+    list<processo>::iterator it;
 
     //calcula tempo de execução (soma de tempo de cpu dos processos)
     int tempo = 0;
     for (it = processos.begin(); it != processos.end(); ++it){
-        tempo = it->first->tempocpu;
+        tempo = tempo + it->tempocpu;
     }
+
+    processos.sort([](const processo &a, const processo &b) { if (a.creditos == b.creditos) {return a.ordem < b.ordem;} else { return a.creditos > b.creditos; }}); 
 
     //onde o escalonamento acontece
     for (int i = 0; i < tempo; i++) {
-        /*
-        implementar algoritmo de escolha de processo
-        (escolher qual processo vai ser executado nessa medida de tempo)
-        aqui vai ir algoritmo round robbin tbm eu acho
-        enunciado diz que maior numero de creditos = maior prioridade
-        inicialmente creditos = prioridade do processo
-        */
-        
-        //confere se todos os processos tem creditos = 0
-        int counter;
+        int counter = 0;
         for (it = processos.begin(); it != processos.end(); ++it) {
-            if (it->first->creditos /= 0) {
-                counter++;
+            //se o estado é bloqueio decrementa o contador de tempo de bloqueio
+            if (it->estado == 'b') {
+                it->counteres--;
+                if (it->counteres == 0) {
+                    it->estado = 'w';
+                    it->counteres = it->tempoes;
+                    it->temposurto = it->surto;
+                }
             }
-        }
-        if (counter == 0) { //se creditos = 0, usa a formula do enunciado
-                it->first->creditos = it->first->creditos/2+it->first->prioridade;
+
+            //se todos os valores de credito não bloqueado são diferente de zero, aumenta o counter
+            if (it->creditos != 0) {
+                if (it->estado != 'b') {
+                    counter++;
+                }
             }
-        
-        it = /*processo atual definido em cima*/;
-        if (it->first->tempocpu == 0) { //se processo nao tem mais tempo de cpu, coloca ele no estado d (done)
-            it->first->estado = 'd';
-            //vai para o proximo processo
-        } else if (it->first->surto == 0) { //se processo esgotou tempo de surto, manda pro estado b (block) e muda de processo 
-            //ideia: alguns processos não tem surto, então podemos atribuir -1 ao invés de 0 pra esses
-            it->first->estado = 'b';
-            //vai para o proximo processo
-        } else if (it->first->creditos == 0) { //se processo não tem creditos, muda de processo
-            //vai para o proximo processo
-        } else {
-            it->first->creditos--; //decrementa creditos do processo atual
-            it->first->tempocpu--; //decrementa tempo de cpu do processo atual
-            it->first->surto--; //decrementa tempo de surto (basicamente, isso é um countdown até o surto acontecer se tiver; quando bate em zero, programa trava)
-                                //unico problema é que nesse caso eu to decrementando diretamente do objeto mas esse valor tem que ser fixo
-                                //e tem que decrementar uma variavel auxiliar
         }
 
-        /*
-        implementar algoritmo de impressão
-        */
+        //se o counter é zero usa formula
+        if (counter == 0) {
+            for (it = processos.begin(); it != processos.end(); ++it) {
+                it->creditos = it->creditos/2 + it->prioridade;
+            } 
+        }
+
+        //it = inicio
+        it = processos.begin();
+        if (it->estado == 'w') { //se o estado é wait, muda para execução
+            it->estado = 'r';
+        }
+
+        //se o estado é execução, decrementa o tempo de cpu o tempo de surto e o credito
+        if (it->estado == 'r') {
+            it->temposurto--;
+            it->tempocpu--;
+            it->creditos--;
+            if (it->temposurto == 0) { //se bateu em zero o tempo de surto, muda o estado para bloqueio e ordena a lista
+                it->estado = 'b';
+                processos.sort([](const processo &a, const processo &b) { if (a.creditos == b.creditos) {return a.ordem < b.ordem;} else { return a.creditos > b.creditos; }}); 
+            } else if (it->tempocpu == 0) { //se o tempo de cpu bateu em zero, muda o estado para finalizado
+                it->estado = 'f'; 
+            } else if (it->creditos == 0) { //se o credito bateu em zero, muda o estado para wait e ordena a lista
+                it->estado = 'w';
+                processos.sort([](const processo &a, const processo &b) { if (a.creditos == b.creditos) {return a.ordem < b.ordem;} else { return a.creditos > b.creditos; }}); 
+            }
+        }
+        if (it->estado == 'f') { //se o estado é finalizado, apaga o processo da lista
+            processos.erase(it);
+        }
+
+        //imprime
+        cout << "Tempo: " << i << endl;
+        for (it = processos.begin(); it != processos.end(); ++it) {
+            cout << "PID = " << it->pid << " " << "Estado = " << it->estado << " " << "Creditos = " << it->creditos << " " << "Surto = " << it->temposurto << " " << "Tempo E/S = " << it->counteres << " " << "Tempo CPU = " << it->tempocpu << " " << "Ordem = " << it->ordem << " " << "Prioridade = " << it->prioridade << endl;
+        }
     }
 }
