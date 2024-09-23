@@ -6,7 +6,8 @@
 
 class Process {
 	public:
-	std::string pid;
+	// std::string pid;
+	int pid;
 	char estado;
 	int creditos;
 	int surto;
@@ -17,6 +18,7 @@ class Process {
 	int ordem;
 	int prioridade;
 	Process(std::string n, char e, int c, int s, int ts, int tcpu, int o);
+	Process(int n, char e, int c, int s, int ts, int tcpu, int o);
 	void print();
 };
 	std::ostream& operator<<(std::ostream& os, const Process& p);

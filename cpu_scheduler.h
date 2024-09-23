@@ -3,9 +3,10 @@
 
 #include "Processlist.h"
 #include <ostream>
+#include <vector>
+
 
 int init();
-int print_result(int i, ProcessList processlist);
-
+int print_result();
 
 #endif // CPU_SCHEDULER_H

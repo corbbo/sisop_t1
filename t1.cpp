@@ -2,6 +2,6 @@
 
 int main() {
     init();
-    print_result();
+    // print_result();
     return 0;
 }

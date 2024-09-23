@@ -1,7 +1,7 @@
 #include <string>
 #include "Process.h"
 
-Process::Process(std::string n, char e, int c, int s, int ts, int tcpu, int o){
+Process::Process(int n, char e, int c, int s, int ts, int tcpu, int o){
 	pid = n;
 	estado = e;
 	creditos = c;

@@ -1,0 +1,151 @@
+Tempo: 1
+PID = A Estado = r Creditos = 2 Surto = 1 Tempo E/S = 5 Tempo CPU = 5 Ordem = 1 Prioridade = 3
+PID = B Estado = w Creditos = 3 Surto = 3 Tempo E/S = 10 Tempo CPU = 6 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 3 Surto = 0 Tempo E/S = 0 Tempo CPU = 14 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = 0 Tempo E/S = 0 Tempo CPU = 10 Ordem = 4 Prioridade = 3
+Tempo: 2
+PID = B Estado = w Creditos = 3 Surto = 3 Tempo E/S = 10 Tempo CPU = 6 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 3 Surto = 0 Tempo E/S = 0 Tempo CPU = 14 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = 0 Tempo E/S = 0 Tempo CPU = 10 Ordem = 4 Prioridade = 3
+PID = A Estado = b Creditos = 1 Surto = 0 Tempo E/S = 5 Tempo CPU = 4 Ordem = 1 Prioridade = 3
+Tempo: 3
+PID = B Estado = r Creditos = 2 Surto = 2 Tempo E/S = 10 Tempo CPU = 5 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 3 Surto = 0 Tempo E/S = 0 Tempo CPU = 14 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = 0 Tempo E/S = 0 Tempo CPU = 10 Ordem = 4 Prioridade = 3
+PID = A Estado = b Creditos = 1 Surto = 0 Tempo E/S = 4 Tempo CPU = 4 Ordem = 1 Prioridade = 3
+Tempo: 4
+PID = B Estado = r Creditos = 1 Surto = 1 Tempo E/S = 10 Tempo CPU = 4 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 3 Surto = 0 Tempo E/S = 0 Tempo CPU = 14 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = 0 Tempo E/S = 0 Tempo CPU = 10 Ordem = 4 Prioridade = 3
+PID = A Estado = b Creditos = 1 Surto = 0 Tempo E/S = 3 Tempo CPU = 4 Ordem = 1 Prioridade = 3
+Tempo: 5
+PID = C Estado = w Creditos = 3 Surto = 0 Tempo E/S = 0 Tempo CPU = 14 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = 0 Tempo E/S = 0 Tempo CPU = 10 Ordem = 4 Prioridade = 3
+PID = A Estado = b Creditos = 1 Surto = 0 Tempo E/S = 2 Tempo CPU = 4 Ordem = 1 Prioridade = 3
+PID = B Estado = b Creditos = 0 Surto = 0 Tempo E/S = 10 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+Tempo: 6
+PID = C Estado = r Creditos = 2 Surto = -1 Tempo E/S = 0 Tempo CPU = 13 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = 0 Tempo E/S = 0 Tempo CPU = 10 Ordem = 4 Prioridade = 3
+PID = A Estado = b Creditos = 1 Surto = 0 Tempo E/S = 1 Tempo CPU = 4 Ordem = 1 Prioridade = 3
+PID = B Estado = b Creditos = 0 Surto = 0 Tempo E/S = 9 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+Tempo: 7
+PID = C Estado = r Creditos = 1 Surto = -2 Tempo E/S = 0 Tempo CPU = 12 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = 0 Tempo E/S = 0 Tempo CPU = 10 Ordem = 4 Prioridade = 3
+PID = A Estado = w Creditos = 1 Surto = 2 Tempo E/S = 5 Tempo CPU = 4 Ordem = 1 Prioridade = 3
+PID = B Estado = b Creditos = 0 Surto = 0 Tempo E/S = 8 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+Tempo: 8
+PID = D Estado = w Creditos = 3 Surto = 0 Tempo E/S = 0 Tempo CPU = 10 Ordem = 4 Prioridade = 3
+PID = A Estado = w Creditos = 1 Surto = 2 Tempo E/S = 5 Tempo CPU = 4 Ordem = 1 Prioridade = 3
+PID = B Estado = b Creditos = 0 Surto = 0 Tempo E/S = 7 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -3 Tempo E/S = 0 Tempo CPU = 11 Ordem = 3 Prioridade = 3
+Tempo: 9
+PID = D Estado = r Creditos = 2 Surto = -1 Tempo E/S = 0 Tempo CPU = 9 Ordem = 4 Prioridade = 3
+PID = A Estado = w Creditos = 1 Surto = 2 Tempo E/S = 5 Tempo CPU = 4 Ordem = 1 Prioridade = 3
+PID = B Estado = b Creditos = 0 Surto = 0 Tempo E/S = 6 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -3 Tempo E/S = 0 Tempo CPU = 11 Ordem = 3 Prioridade = 3
+Tempo: 10
+PID = D Estado = r Creditos = 1 Surto = -2 Tempo E/S = 0 Tempo CPU = 8 Ordem = 4 Prioridade = 3
+PID = A Estado = w Creditos = 1 Surto = 2 Tempo E/S = 5 Tempo CPU = 4 Ordem = 1 Prioridade = 3
+PID = B Estado = b Creditos = 0 Surto = 0 Tempo E/S = 5 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -3 Tempo E/S = 0 Tempo CPU = 11 Ordem = 3 Prioridade = 3
+Tempo: 11
+PID = A Estado = w Creditos = 1 Surto = 2 Tempo E/S = 5 Tempo CPU = 4 Ordem = 1 Prioridade = 3
+PID = B Estado = b Creditos = 0 Surto = 0 Tempo E/S = 4 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -3 Tempo E/S = 0 Tempo CPU = 11 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 0 Surto = -3 Tempo E/S = 0 Tempo CPU = 7 Ordem = 4 Prioridade = 3
+Tempo: 12
+PID = B Estado = b Creditos = 0 Surto = 0 Tempo E/S = 3 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -3 Tempo E/S = 0 Tempo CPU = 11 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 0 Surto = -3 Tempo E/S = 0 Tempo CPU = 7 Ordem = 4 Prioridade = 3
+PID = A Estado = w Creditos = 0 Surto = 1 Tempo E/S = 5 Tempo CPU = 3 Ordem = 1 Prioridade = 3
+Tempo: 13
+PID = C Estado = r Creditos = 2 Surto = -4 Tempo E/S = 0 Tempo CPU = 10 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = -3 Tempo E/S = 0 Tempo CPU = 7 Ordem = 4 Prioridade = 3
+PID = A Estado = w Creditos = 3 Surto = 1 Tempo E/S = 5 Tempo CPU = 3 Ordem = 1 Prioridade = 3
+PID = B Estado = b Creditos = 3 Surto = 0 Tempo E/S = 2 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+Tempo: 14
+PID = C Estado = r Creditos = 1 Surto = -5 Tempo E/S = 0 Tempo CPU = 9 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = -3 Tempo E/S = 0 Tempo CPU = 7 Ordem = 4 Prioridade = 3
+PID = A Estado = w Creditos = 3 Surto = 1 Tempo E/S = 5 Tempo CPU = 3 Ordem = 1 Prioridade = 3
+PID = B Estado = b Creditos = 3 Surto = 0 Tempo E/S = 1 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+Tempo: 15
+PID = D Estado = w Creditos = 3 Surto = -3 Tempo E/S = 0 Tempo CPU = 7 Ordem = 4 Prioridade = 3
+PID = A Estado = w Creditos = 3 Surto = 1 Tempo E/S = 5 Tempo CPU = 3 Ordem = 1 Prioridade = 3
+PID = B Estado = w Creditos = 3 Surto = 3 Tempo E/S = 10 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -6 Tempo E/S = 0 Tempo CPU = 8 Ordem = 3 Prioridade = 3
+Tempo: 16
+PID = D Estado = r Creditos = 2 Surto = -4 Tempo E/S = 0 Tempo CPU = 6 Ordem = 4 Prioridade = 3
+PID = A Estado = w Creditos = 3 Surto = 1 Tempo E/S = 5 Tempo CPU = 3 Ordem = 1 Prioridade = 3
+PID = B Estado = w Creditos = 3 Surto = 3 Tempo E/S = 10 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -6 Tempo E/S = 0 Tempo CPU = 8 Ordem = 3 Prioridade = 3
+Tempo: 17
+PID = D Estado = r Creditos = 1 Surto = -5 Tempo E/S = 0 Tempo CPU = 5 Ordem = 4 Prioridade = 3
+PID = A Estado = w Creditos = 3 Surto = 1 Tempo E/S = 5 Tempo CPU = 3 Ordem = 1 Prioridade = 3
+PID = B Estado = w Creditos = 3 Surto = 3 Tempo E/S = 10 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -6 Tempo E/S = 0 Tempo CPU = 8 Ordem = 3 Prioridade = 3
+Tempo: 18
+PID = A Estado = w Creditos = 3 Surto = 1 Tempo E/S = 5 Tempo CPU = 3 Ordem = 1 Prioridade = 3
+PID = B Estado = w Creditos = 3 Surto = 3 Tempo E/S = 10 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -6 Tempo E/S = 0 Tempo CPU = 8 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 0 Surto = -6 Tempo E/S = 0 Tempo CPU = 4 Ordem = 4 Prioridade = 3
+Tempo: 19
+PID = B Estado = w Creditos = 3 Surto = 3 Tempo E/S = 10 Tempo CPU = 3 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -6 Tempo E/S = 0 Tempo CPU = 8 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 0 Surto = -6 Tempo E/S = 0 Tempo CPU = 4 Ordem = 4 Prioridade = 3
+PID = A Estado = b Creditos = 2 Surto = 0 Tempo E/S = 5 Tempo CPU = 2 Ordem = 1 Prioridade = 3
+Tempo: 20
+PID = B Estado = r Creditos = 2 Surto = 2 Tempo E/S = 10 Tempo CPU = 2 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -6 Tempo E/S = 0 Tempo CPU = 8 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 0 Surto = -6 Tempo E/S = 0 Tempo CPU = 4 Ordem = 4 Prioridade = 3
+PID = A Estado = b Creditos = 2 Surto = 0 Tempo E/S = 4 Tempo CPU = 2 Ordem = 1 Prioridade = 3
+Tempo: 21
+PID = B Estado = r Creditos = 1 Surto = 1 Tempo E/S = 10 Tempo CPU = 1 Ordem = 2 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -6 Tempo E/S = 0 Tempo CPU = 8 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 0 Surto = -6 Tempo E/S = 0 Tempo CPU = 4 Ordem = 4 Prioridade = 3
+PID = A Estado = b Creditos = 2 Surto = 0 Tempo E/S = 3 Tempo CPU = 2 Ordem = 1 Prioridade = 3
+Tempo: 22
+PID = A Estado = b Creditos = 2 Surto = 0 Tempo E/S = 2 Tempo CPU = 2 Ordem = 1 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -6 Tempo E/S = 0 Tempo CPU = 8 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 0 Surto = -6 Tempo E/S = 0 Tempo CPU = 4 Ordem = 4 Prioridade = 3
+Tempo: 23
+PID = C Estado = r Creditos = 2 Surto = -7 Tempo E/S = 0 Tempo CPU = 7 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = -6 Tempo E/S = 0 Tempo CPU = 4 Ordem = 4 Prioridade = 3
+PID = A Estado = b Creditos = 4 Surto = 0 Tempo E/S = 1 Tempo CPU = 2 Ordem = 1 Prioridade = 3
+Tempo: 24
+PID = C Estado = r Creditos = 1 Surto = -8 Tempo E/S = 0 Tempo CPU = 6 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = -6 Tempo E/S = 0 Tempo CPU = 4 Ordem = 4 Prioridade = 3
+PID = A Estado = w Creditos = 4 Surto = 2 Tempo E/S = 5 Tempo CPU = 2 Ordem = 1 Prioridade = 3
+Tempo: 25
+PID = A Estado = w Creditos = 4 Surto = 2 Tempo E/S = 5 Tempo CPU = 2 Ordem = 1 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = -6 Tempo E/S = 0 Tempo CPU = 4 Ordem = 4 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -9 Tempo E/S = 0 Tempo CPU = 5 Ordem = 3 Prioridade = 3
+Tempo: 26
+PID = A Estado = r Creditos = 3 Surto = 1 Tempo E/S = 5 Tempo CPU = 1 Ordem = 1 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = -6 Tempo E/S = 0 Tempo CPU = 4 Ordem = 4 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -9 Tempo E/S = 0 Tempo CPU = 5 Ordem = 3 Prioridade = 3
+Tempo: 27
+PID = D Estado = w Creditos = 3 Surto = -6 Tempo E/S = 0 Tempo CPU = 4 Ordem = 4 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -9 Tempo E/S = 0 Tempo CPU = 5 Ordem = 3 Prioridade = 3
+Tempo: 28
+PID = D Estado = r Creditos = 2 Surto = -7 Tempo E/S = 0 Tempo CPU = 3 Ordem = 4 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -9 Tempo E/S = 0 Tempo CPU = 5 Ordem = 3 Prioridade = 3
+Tempo: 29
+PID = D Estado = r Creditos = 1 Surto = -8 Tempo E/S = 0 Tempo CPU = 2 Ordem = 4 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -9 Tempo E/S = 0 Tempo CPU = 5 Ordem = 3 Prioridade = 3
+Tempo: 30
+PID = C Estado = w Creditos = 0 Surto = -9 Tempo E/S = 0 Tempo CPU = 5 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 0 Surto = -9 Tempo E/S = 0 Tempo CPU = 1 Ordem = 4 Prioridade = 3
+Tempo: 31
+PID = C Estado = r Creditos = 2 Surto = -10 Tempo E/S = 0 Tempo CPU = 4 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = -9 Tempo E/S = 0 Tempo CPU = 1 Ordem = 4 Prioridade = 3
+Tempo: 32
+PID = C Estado = r Creditos = 1 Surto = -11 Tempo E/S = 0 Tempo CPU = 3 Ordem = 3 Prioridade = 3
+PID = D Estado = w Creditos = 3 Surto = -9 Tempo E/S = 0 Tempo CPU = 1 Ordem = 4 Prioridade = 3
+Tempo: 33
+PID = D Estado = w Creditos = 3 Surto = -9 Tempo E/S = 0 Tempo CPU = 1 Ordem = 4 Prioridade = 3
+PID = C Estado = w Creditos = 0 Surto = -12 Tempo E/S = 0 Tempo CPU = 2 Ordem = 3 Prioridade = 3
+Tempo: 34
+PID = C Estado = w Creditos = 0 Surto = -12 Tempo E/S = 0 Tempo CPU = 2 Ordem = 3 Prioridade = 3
+Tempo: 35
+PID = C Estado = r Creditos = 2 Surto = -13 Tempo E/S = 0 Tempo CPU = 1 Ordem = 3 Prioridade = 3
+Tempo: 36

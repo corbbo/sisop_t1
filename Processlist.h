@@ -10,6 +10,7 @@ public:
     void add(Process p);
     void sort(int n);
     void print();
+    int size();
     Process top();
     Process erase(std::list<Process>::iterator p_it);
     Process pop_front();
@@ -17,6 +18,7 @@ public:
     std::list<Process>::iterator end();
 private:
     std::list<Process> processos; //mapa que armazena processos
+    int _size;
 };
 
 #endif // PROCESSLIST_HPP

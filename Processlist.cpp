@@ -10,6 +10,7 @@ ProcessList::ProcessList() {
 
 void ProcessList::add(Process p) {
 	processos.push_back(p);
+	_size++;
 }
 
 void ProcessList::sort(int n) {
@@ -49,6 +50,7 @@ Process ProcessList::pop_front(){
 	if (!processos.empty()) {
 		Process p = processos.front();
 		processos.pop_front();
+		_size--;
 		return p;
 	}
 	throw std::runtime_error("Process list is empty");
@@ -57,5 +59,10 @@ Process ProcessList::pop_front(){
 Process ProcessList::erase(std::list<Process>::iterator p_it){
 	Process p = *p_it;
 	processos.erase(p_it);
+	_size--;
 	return p;
+}
+
+int ProcessList::size(){
+	return processos.size();
 }

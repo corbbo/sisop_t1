@@ -22,3 +22,7 @@ Process.o: Process.cpp
 
 clean: 			
 	rm -f ${_DASHOES} ${_APP}
+
+run: $(_APP)
+	rm -f ${_DASH_O}
+	./$(_APP) 
