@@ -74,6 +74,20 @@ int main () {
                     it->temposurto = it->surto;
                 }
             }
+
+            if (it->creditos != 0) {
+                if (it->estado != 'b') {
+                    counter++;
+                }
+            }
+        }
+
+        //se o counter é zero usa formula
+        if (counter == 0) {
+            for (it = processos.begin(); it != processos.end(); ++it) {
+                it->creditos = it->creditos/2 + it->prioridade;
+            }
+            processos.sort([](const processo &a, const processo &b) {return a.creditos > b.creditos; }); 
         }
 
         //it = inicio
@@ -101,23 +115,6 @@ int main () {
         } else if (it->estado == 'b') {
             processos.push_back(*it);
             processos.pop_front();
-        }
-
-        //se todos os valores de credito não bloqueado são diferente de zero, aumenta o counter
-        for (it = processos.begin(); it != processos.end(); ++it) {
-            if (it->creditos != 0) {
-                if (it->estado != 'b') {
-                    counter++;
-                }
-            }
-        }
-
-        //se o counter é zero usa formula
-        if (counter == 0) {
-            for (it = processos.begin(); it != processos.end(); ++it) {
-                it->creditos = it->creditos/2 + it->prioridade;
-            }
-            processos.sort([](const processo &a, const processo &b) {return a.creditos > b.creditos; }); 
         }
 
         //imprime
