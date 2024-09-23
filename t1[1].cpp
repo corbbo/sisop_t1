@@ -74,8 +74,37 @@ int main () {
                     it->temposurto = it->surto;
                 }
             }
+        }
 
-            //se todos os valores de credito não bloqueado são diferente de zero, aumenta o counter
+        //it = inicio
+        it = processos.begin();
+        if (it->estado == 'w') {
+            it->estado = 'r';
+        }
+        if (it->estado == 'r') {
+            it->temposurto--;
+            it->creditos--;
+            it->tempocpu--;
+            if (it->tempocpu == 0) {
+                processos.erase(it);
+                processos.sort([](const processo &a, const processo &b) {return a.creditos > b.creditos; });
+            } else if (it->temposurto == 0) {
+                it->estado = 'b';
+                processos.push_back(*it);
+                processos.pop_front();
+            } else if (it->creditos == 0) {
+                it->estado = 'w';
+                processos.push_back(*it);
+                processos.pop_front();
+                processos.sort([](const processo &a, const processo &b) {return a.creditos > b.creditos; }); 
+            }   
+        } else if (it->estado == 'b') {
+            processos.push_back(*it);
+            processos.pop_front();
+        }
+
+        //se todos os valores de credito não bloqueado são diferente de zero, aumenta o counter
+        for (it = processos.begin(); it != processos.end(); ++it) {
             if (it->creditos != 0) {
                 if (it->estado != 'b') {
                     counter++;
@@ -87,32 +116,8 @@ int main () {
         if (counter == 0) {
             for (it = processos.begin(); it != processos.end(); ++it) {
                 it->creditos = it->creditos/2 + it->prioridade;
-            } 
-        }
-
-        //it = inicio
-        it = processos.begin();
-        if (it->estado == 'w') { //se o estado é wait, muda para execução
-            it->estado = 'r';
-        }
-
-        //se o estado é execução, decrementa o tempo de cpu o tempo de surto e o credito
-        if (it->estado == 'r') {
-            it->temposurto--;
-            it->tempocpu--;
-            it->creditos--;
-            if (it->temposurto == 0) { //se bateu em zero o tempo de surto, muda o estado para bloqueio e ordena a lista
-                it->estado = 'b';
-                processos.sort([](const processo &a, const processo &b) { if (a.creditos == b.creditos) {return a.ordem < b.ordem;} else { return a.creditos > b.creditos; }}); 
-            } else if (it->tempocpu == 0) { //se o tempo de cpu bateu em zero, muda o estado para finalizado
-                it->estado = 'f'; 
-            } else if (it->creditos == 0) { //se o credito bateu em zero, muda o estado para wait e ordena a lista
-                it->estado = 'w';
-                processos.sort([](const processo &a, const processo &b) { if (a.creditos == b.creditos) {return a.ordem < b.ordem;} else { return a.creditos > b.creditos; }}); 
             }
-        }
-        if (it->estado == 'f') { //se o estado é finalizado, apaga o processo da lista
-            processos.erase(it);
+            processos.sort([](const processo &a, const processo &b) {return a.creditos > b.creditos; }); 
         }
 
         //imprime
