@@ -63,6 +63,7 @@ int main () {
 
     //onde o escalonamento acontece
     for (int i = 0; i < tempo; i++) {
+
         int counter = 0;
         for (it = processos.begin(); it != processos.end(); ++it) {
             //se o estado é bloqueio decrementa o contador de tempo de bloqueio
@@ -92,9 +93,16 @@ int main () {
 
         //it = inicio
         it = processos.begin();
+        if (it->estado == 'b') {
+            processos.push_back(*it);
+            processos.pop_front();
+            it = processos.begin();
+        }
+        
         if (it->estado == 'w') {
             it->estado = 'r';
         }
+
         if (it->estado == 'r') {
             it->temposurto--;
             it->creditos--;
@@ -112,13 +120,9 @@ int main () {
                 processos.pop_front();
                 processos.sort([](const processo &a, const processo &b) {return a.creditos > b.creditos; }); 
             }   
-        } else if (it->estado == 'b') {
-            processos.push_back(*it);
-            processos.pop_front();
         }
 
-        //imprime
-        cout << "Tempo: " << i << endl;
+        cout << "Tempo: " << i + 1 << endl;
         for (it = processos.begin(); it != processos.end(); ++it) {
             cout << "PID = " << it->pid << " " << "Estado = " << it->estado << " " << "Creditos = " << it->creditos << " " << "Surto = " << it->temposurto << " " << "Tempo E/S = " << it->counteres << " " << "Tempo CPU = " << it->tempocpu << " " << "Ordem = " << it->ordem << " " << "Prioridade = " << it->prioridade << endl;
         }
