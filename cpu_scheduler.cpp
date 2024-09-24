@@ -37,7 +37,7 @@ int init() {
 			//se o estado é bloqueio decrementa o contador de tempo de bloqueio
 			if (processlist.it->estado == 'b') {
 				processlist.it->counteres--;
-				if (processlist.it->counteres == 0) {
+				if (processlist.it->counteres < 0) {
 					processlist.it->estado = 'w';
 					processlist.it->counteres = processlist.it->tempoes;
 					processlist.it->temposurto = processlist.it->surto;
@@ -71,6 +71,13 @@ int init() {
 			processlist.it->estado = 'r';
 		}
 
+		for(LOGIC){
+		lines[processlist.it->pid] += (processlist.it->estado) ;
+		lines[processlist.it->pid] += " ";
+		}
+
+		processlist.it = processlist.begin();
+
 		if (processlist.it->estado == 'r') {
 			processlist.it->temposurto--;
 			processlist.it->creditos--;
@@ -89,10 +96,6 @@ int init() {
 				processlist.sort(1); 
 			}   
 		}   
-		for(LOGIC){
-		lines[processlist.it->pid] += (processlist.it->estado) ;
-		lines[processlist.it->pid] += " ";
-	}
 	}
 	print_result(processlist);
 	return 1;
