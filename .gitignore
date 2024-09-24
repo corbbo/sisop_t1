@@ -3,3 +3,5 @@
 *.exe
 *.o
 t1_sisop
+*.zip
+*.tar.gz
