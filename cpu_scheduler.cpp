@@ -5,25 +5,44 @@
 #include <iomanip>
 #define LOGIC processlist.it = processlist.begin(); processlist.it != processlist.end(); ++processlist.it
 
+using namespace std;
+
 int tempo = 0;
 std::map<int, std::string> lines;
 
 void calculaTempo(ProcessList processlist); //calcula tempo de execução (soma de tempo de cpu dos processos)
 
 int init() {
+	ProcessList processlist;
 
+	FILE *proc;
+	proc = fopen("processos.txt", "r");
+	if (proc == NULL) {
+		std::cout << "Erro ao abrir arquivo" << std::endl;
+		return 0;
+	}
+
+	while (!feof(proc)) {
+		int pid, prioridade, surto, tempocpu, creditos, tempoes, ordem;
+		fscanf(proc, "%d %d %d %d %d %d\n", &pid, &prioridade, &surto, &tempoes, &tempocpu, &ordem);
+		processlist.add(Process (pid, 'w', prioridade, surto, tempoes, tempocpu, ordem));
+	}
+	
+	/*
 	ProcessList processlist;
 	Process A(0, 'w', 3, 2, 5, 6, 1);
 	processlist.add(A);
 	Process B(1, 'w', 3, 3, 10, 6, 2);
 	processlist.add(B);
 	Process C(2, 'w', 3, 0, 0, 14, 3);
-	processlist.add(C);
+	processlist.add(C
 	Process D(3, 'w', 3, 0, 0, 10, 4);
 	processlist.add(D);
+	*/
+	
 
 	for (LOGIC){
-		lines[processlist.it->pid] = std::to_string(processlist.it->pid) + ":\t";  }  
+		lines[processlist.it->pid] = std::to_string(processlist.it->pid) + ":\t"; }  
 
 	//calcula tempo de execução (soma de tempo de cpu dos processos)
 	calculaTempo(processlist);
