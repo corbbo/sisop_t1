@@ -1,6 +1,8 @@
 #include "cpu_scheduler.h"
 #include <map>
 #include <utility>
+#include <sstream>
+#include <iomanip>
 #define LOGIC processlist.it = processlist.begin(); processlist.it != processlist.end(); ++processlist.it
 
 int tempo = 0;
@@ -92,7 +94,7 @@ int init() {
 		lines[processlist.it->pid] += " ";
 	}
 	}
-	print_result();
+	print_result(processlist);
 	return 1;
 }
 
@@ -102,9 +104,15 @@ void calculaTempo(ProcessList processlist) //calcula tempo de execução (soma d
 		tempo = tempo + processlist.it->tempocpu;
 	}
 }
-int print_result() {
+int print_result(ProcessList processlist) {
 	for(auto const& x : lines) {
 		std::cout << x.second << std::endl;
+	}
+	std::cout << std::endl;
+	std::cout << "Total CPU time:\t" << tempo << "ms"<< std::endl;
+	std::stringstream ss;
+	for(auto it : processlist.processos_teminados){
+		std::cout << "Process " << it.pid << ":\t" << it.tempo_total_cpu << "ms" << "\t||\t" << std::setprecision(4) << double(it.tempo_total_cpu)/double(tempo) * 100 << "%" << std::endl;
 	}
 	return 0;
 }

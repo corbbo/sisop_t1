@@ -17,9 +17,9 @@ class Process {
 	int tempocpu;
 	int ordem;
 	int prioridade;
-	Process(std::string n, char e, int c, int s, int ts, int tcpu, int o);
+	int tempo_total_cpu;
 	Process(int n, char e, int c, int s, int ts, int tcpu, int o);
-	void print();
+
 };
 	std::ostream& operator<<(std::ostream& os, const Process& p);
 

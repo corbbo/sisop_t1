@@ -16,8 +16,9 @@ public:
     Process pop_front();
     std::list<Process>::iterator begin();
     std::list<Process>::iterator end();
+    std::list<Process> processos_teminados; //mapa que armazena processos terminados
 private:
-    std::list<Process> processos; //mapa que armazena processos
+    std::list<Process> processos;           //mapa que armazena processos
     int _size;
 };
 

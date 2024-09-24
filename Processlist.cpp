@@ -58,6 +58,7 @@ Process ProcessList::pop_front(){
 
 Process ProcessList::erase(std::list<Process>::iterator p_it){
 	Process p = *p_it;
+	processos_teminados.push_back(p);
 	processos.erase(p_it);
 	_size--;
 	return p;

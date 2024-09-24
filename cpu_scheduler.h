@@ -7,6 +7,6 @@
 
 
 int init();
-int print_result();
+int print_result(ProcessList processlist);
 
 #endif // CPU_SCHEDULER_H
